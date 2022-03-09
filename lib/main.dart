@@ -1,12 +1,33 @@
-// ignore_for_file: prefer_const_constructors
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:instaclone/responsive/Responsive.dart';
 import 'package:instaclone/responsive/mobile_screen_layout.dart';
 import 'package:instaclone/responsive/web_screen_layout.dart';
 import 'package:instaclone/utils/colors.dart';
+import 'auth/secrets.dart';
 
-void main() {
+
+
+
+void main() async {
+  print(apikey);
+  WidgetsFlutterBinding.ensureInitialized();
+  if (kIsWeb) {
+    await Firebase.initializeApp(
+      options: FirebaseOptions(
+          apiKey: apikey,
+          appId: appId,
+          messagingSenderId: messagingSenderId,
+          projectId: projectId,
+          storageBucket: storageBucket,
+          ),
+    );
+  } else {
+    await Firebase.initializeApp();
+  }
+
   runApp(const MyApp());
 }
 
