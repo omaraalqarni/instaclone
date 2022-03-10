@@ -6,13 +6,13 @@ import 'package:instaclone/responsive/Responsive.dart';
 import 'package:instaclone/responsive/mobile_screen_layout.dart';
 import 'package:instaclone/responsive/web_screen_layout.dart';
 import 'package:instaclone/utils/colors.dart';
-import 'auth/secrets.dart';
+import 'auth/.secrets.dart';
+import 'screens/login.dart';
 
 
 
 
 void main() async {
-  print(apikey);
   WidgetsFlutterBinding.ensureInitialized();
   if (kIsWeb) {
     await Firebase.initializeApp(
@@ -43,9 +43,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: mobileBackgroundColor,
       ),
-      home: const ResponsiveLayout(
-          mobileScreenLayout: MobileScreenLayout(),
-          webScreenLayout: WebScreenLayout()),
+      // home: const ResponsiveLayout(
+      //     mobileScreenLayout: MobileScreenLayout(),
+      //     webScreenLayout: WebScreenLayout()
+      //     ),
+      home: LoginScreen(),
     );
   }
 }
