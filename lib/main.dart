@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:instaclone/responsive/Responsive.dart';
 import 'package:instaclone/responsive/mobile_screen_layout.dart';
 import 'package:instaclone/responsive/web_screen_layout.dart';
+import 'package:instaclone/screens/signup_screen.dart';
 import 'package:instaclone/utils/colors.dart';
 import 'auth/.secrets.dart';
 import 'screens/login.dart';
@@ -47,7 +48,7 @@ class MyApp extends StatelessWidget {
       //     mobileScreenLayout: MobileScreenLayout(),
       //     webScreenLayout: WebScreenLayout()
       //     ),
-      home: LoginScreen(),
+      home: const SignupScreen(),
     );
   }
 }
